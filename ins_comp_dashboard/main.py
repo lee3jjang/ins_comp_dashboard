@@ -48,4 +48,6 @@ asset = fin_pos \
         .assign(a = lambda x: np.round(x.a/1e12,1)) \
         .rename(columns={'a': 'amount'})
 
-px.pie(asset, values='amount', names='classification')
+fig = px.pie(asset, values='amount', names='classification', title='자산구성')
+fig.update_traces(textposition='outside', textinfo='percent+label')
+# %%
